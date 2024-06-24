@@ -1,0 +1,140 @@
+@charset "UTF-8";
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+.loginWrap{
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.loginLogo{
+  width: 250px;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 6.8rem;
+}
+.loginLogo > a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  gap: 10px;
+}
+.loginLogo > a > img{
+  width: 80px;
+  height: 70px;
+}
+.loginLogo > a > span{
+  width: 120px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+.loginInner{
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 5rem;
+  padding-bottom: 20px;
+  
+}
+.loginForm{
+  line-height: 1.5;
+}
+.inputBox{
+  width: 400px;
+  margin: 5px auto;
+  border: .1rem solid #ddd;
+  border-radius: 1.2rem;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.inputId{
+  width: 100%;
+  position: relative;
+  display: block;
+  padding: 15px 14px;
+  border-bottom: 1px solid rgb(0, 0, 0,0.3);
+  text-align: start;
+}
+.inputPw{
+  width: 100%;
+  position: relative;
+  display: block;
+  padding: 15px 14px;
+  text-align: start;
+}
+.inputId > input,.inputPw >input{
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.errorMessage{
+  margin-top: 7px;
+}
+.loginButtonBox{
+  margin-top: 35px;
+  padding: 0 30px;
+}
+.loginButton{
+  cursor: pointer;
+  width: 70%;
+  height: 55px;
+  border-radius: 13px;
+  background-color: #1769ff;
+  outline: none;
+  border: 1px solid rgb(0, 0, 0,0.3);
+}
+.loginButton > span{
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+}
+.findList{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 11px;
+}
+.findList > ul {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+.findList > ul > li{
+  list-style-type: none;
+  position: relative;
+}
+.findList > ul > li > a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #666;
+}
+#join{
+  color: #1769ff;
+}
+#findPw::before{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: .4rem;
+  left: -9px;
+  width: .1rem;
+  height: 0.8rem;
+  background-color: rgb(0, 0, 0,0.3);
+}
+#findPw::after{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: .4rem;
+  right: -10px;
+  width: .1rem;
+  height: 0.8rem;
+  background-color: rgb(0, 0, 0,0.3);
+}

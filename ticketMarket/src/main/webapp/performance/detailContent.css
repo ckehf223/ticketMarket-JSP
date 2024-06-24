@@ -1,0 +1,131 @@
+@charset "UTF-8";
+.detailContentWrap {
+  margin: 20px auto;
+  border-top: 1px solid rgb(0, 0, 0, 0.3);
+}
+.detailContent{
+  width: 80%;
+  margin: 0 auto;
+}
+.content_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.content_title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.content_mainArea {
+  display: flex;
+}
+
+.content_poster {
+  width: 300px;
+  height: 400px;
+  margin-right: 20px;
+}
+
+.chicago-details {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 10px 0;
+}
+
+.chicago-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#chicago-ticket-count {
+  margin: 0;
+}
+
+#chicago-social-icons a {
+  margin: 0 5px;
+}
+
+#chicago-social-icons img {
+  width: 24px;
+  height: 24px;
+}
+.contentSeatsArea{
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 600px;
+  align-items: center;
+}
+.contentStage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 200px;
+  background-color: gray;
+  border-radius: 10px;
+}
+.stage{
+  font-weight: bold;
+  font-size: 30px;
+}
+.seatWrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  width: 500px;
+  text-align: center;
+  gap: 20px;
+}
+
+.seatCheckBox{
+  display: none; 
+  width: 20px;
+  height: 25px;
+}
+.seatCheckNum{
+  flex: 0 0 25px;
+  width: 20px;
+  height: 25px;
+  font-weight: bold;
+}
+.seatCheckBox_lable{
+  width: 20px;
+  flex: 0 0 25px;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: inherit;
+  font-size: 13px;
+}
+.seatCheckBox_res{
+	width: 20px;
+  flex: 0 0 25px;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: blue;
+  font-size: 13px;
+}
+.seatBoxButton{
+  margin: 20px;
+  width: 400px;
+  height: 30px;
+  padding: 5px 10px;
+  background-color: #8e43e7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

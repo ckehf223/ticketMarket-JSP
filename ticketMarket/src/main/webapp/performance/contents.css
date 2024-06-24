@@ -1,0 +1,158 @@
+@charset "UTF-8";
+#mainContent{
+  border-top: 1px solid rgb(0, 0, 0, 0.3);
+}
+.bigBannerArea{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.bigBanner{
+  display:flex;
+  gap: 20px;
+}
+.bigBannerItem{
+  width: 275px;
+  height: 366px;
+}
+.bigBannerItem > a{
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+.bigBannerItem > a > img{
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+.minBannerArea{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  isolation: isolate;
+  position: relative;
+  width: 100%;
+}
+.minBanner{
+  display: flex;
+  margin: 0 auto;
+  margin-top: 50px;
+  gap: 15px;
+
+}
+.minBannerItem{
+  width: 380px;
+  height: 104px;
+}
+.minBannerItem > a{
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+.minBannerItem > a > img{
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+.panelTitle{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 0 0;
+  cursor: default;
+  width: 100%;
+}
+.panelTitle > h2{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  color: #000;
+  margin: 0;
+}
+.contentsWrap{
+  width: 72%;
+  padding: 0;
+  margin: 30px auto;
+}
+.contentSwipe{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  text-align: center;
+  gap: 15px;
+}
+.contentSlide{
+  flex: 0 0 180px;
+  width: 180px;
+  height: 405px;
+  border-radius: 15px;
+}
+.contentSlide_a{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+.contentSlideItem{
+  width: 100%;
+  height: 240px
+}
+.contentSlideItem > img{
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+.contentSlide_ul{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 116px;
+  list-style-type: none;
+  text-align: start;
+  padding-left: 10px;
+}
+.contentSlide_title{
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 150%;
+  max-height: 300%;
+  word-wrap: break-word;
+  word-break: break-all;
+  width: 100%;
+  font-weight: 700;
+  font-size: 17px;
+}
+.contentSlide_venue{
+  margin-top: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+}
+.contentSlide_day{
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  color: #999;
+}
+.contentSlide_price{
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: #000;
+}

@@ -1,0 +1,219 @@
+@charset "UTF-8";
+#paymentContent{
+  width: 100%;
+  border-top: 1px solid rgb(0,0,0,0.3);
+}
+.paymentWrap{
+  width: 80%;
+  margin: 40px auto;
+}
+.paymentTitleArea{
+  height: 70px;
+  border-bottom: 3px solid #777;
+}
+.paymentTitleArea > h3{
+  line-height: 70px;
+  font-size: 30px;
+  color: #111;
+  font-weight: 500;
+}
+.customerInfoArea{
+  margin-top: 30px;
+}
+.customerInfoArea > h2{
+  padding-left: 2px;
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+.customerTable{
+  width: 100%;
+  border-top: 2px solid #cecece;
+  border-collapse: collapse;
+}
+.customer_col1{
+  width: 130px;
+  border: solid #e4e4e4;
+  border-width: 0 1px 1px 0;
+  padding: 7px 10px 7px 15px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: right;
+  background: #f4f4f4;
+}
+.customer_col2{
+  border-bottom: 1px solid #e4e4e4;
+  padding: 10px 16px;
+  font-size: 13px;
+}
+.customerPhone{
+  margin-bottom: 10px;
+}
+.phone_desc{
+  color: #9a9a9a;
+}
+.deliveryAddress > h2{
+  padding-left: 2px;
+  margin: 30px 0 8px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+}
+.deliveryTable{
+  border-top: 2px solid #cecece;
+  width: 100%;
+}
+.deliveryTable input{
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid rgb(0,0,0,0.3);
+  width: 300px;
+}
+
+#paymentAddress2{
+	display: none;
+	width: 150px;
+}
+
+.delivery_col1{
+  border-right: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 10px 10px 7px 15px;
+  width: 130px;
+  background-color: #f4f4f4;
+  text-align: right;
+  font-size: 13px;
+  font-weight: 700;
+}
+.delivery_col2{
+  border-bottom: 1px solid #e4e4e4;
+  padding: 10px 0 10px 16px;
+  font-size: 13px;
+}
+.changeAddressButton{
+  margin-left: 20px;
+  padding: 4px 8px;
+  background-color: white;
+  border: 1px solid #999;
+  color: #333;
+  border-radius: 5px;
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, .1) inset;
+  font-size: 11px;
+  cursor: pointer;
+}
+.paymentItemArea{
+  margin-top: 20px;
+}
+.paymentItemTitle{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 9px;
+  line-height: 21px;
+  border-collapse: collapse;
+}
+.item_groupBox{
+  border: 1px solid #cecece;
+  border-radius: 3px;
+}
+.deliveryDateBox{
+  padding: 10px 15px 10px 20px;
+  line-height: 26px;
+  background-color: #eee;
+}
+.deliveryDate1{
+  font-size: 16px;
+  font-weight: 600;
+}
+.deliveryDate2{
+  font-size: 16px;
+}
+.itemBox{
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  width: 100%;
+  height: 140px;
+  padding: 15px;
+  gap: 50px;
+}
+.itemBoxImg{
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+}
+.itemDatailBox{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 5px;
+}
+.paymentBox{
+  margin-top: 30px;
+}
+.paymentBox > h2{
+  padding-left: 2px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+.paymentBoxTable{
+  width: 100%;
+  border-top: 2px solid #cecece;
+  border-collapse: collapse;
+}
+.payment_col1{
+  vertical-align: top;
+  width: 130px;
+  text-align: right;
+  border-right: 1px solid #e4e4e4;
+  background: #f4f4f4;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px;
+  border-bottom: 1px solid #e4e4e4;
+}
+.payment_col2{
+  display: flex;
+  gap: 10px;
+  vertical-align: top;
+  padding: 10px;
+  font-size: 13px;
+  border-bottom: 1px solid #e4e4e4;
+  font-weight: 500;
+}
+.payment_col2 > input{
+  margin-left: 20px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid rgb(0,0,0,0.3);
+}
+
+.pointButton{
+  padding: 4px 8px;
+  background-color: white;
+  border: 1px solid #999;
+  color: #333;
+  border-radius: 5px;
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, .1) inset;
+  font-size: 11px;
+  cursor: pointer;
+}
+.paymentButtonArea{
+  position: relative;
+  text-align: center;
+}
+.paymentsButton{
+  width: 300px;
+  height: 60px;
+  border: none;
+  background-color: #346aff;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 60px;
+  border-radius: 6px;
+  margin-top: 30px;
+  cursor: pointer;
+}
