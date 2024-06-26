@@ -1,10 +1,13 @@
 package ticketMarket.bean;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Types;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import dbcon.DBUtil;
 
@@ -25,7 +28,7 @@ public class CommentDBBean {
 
 	// 게시글 댓글 리스트 가져오기
 	public ArrayList<CommentDataBean> getCommentList(int num) {
-		SimpleDateFormat sdf = new SimpleDateFormat("YY.MM.dd hh:mm");
+		SimpleDateFormat sdf = new SimpleDateFormat("yy.MM.dd hh:mm");
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -68,5 +71,31 @@ public class CommentDBBean {
 		} finally {
 			DBUtil.dbReleaseClose(pstmt, conn);
 		}
+	}
+	
+	//댓글 추가
+	public CommentDataBean registerComment(CommentDataBean comment) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yy.MM.dd hh:mm");
+		Date date = new Date();
+		Connection conn = null;
+		CallableStatement cstmt = null;
+		int num = 0;
+		try {
+			conn = DBUtil.getConnection();
+			cstmt = conn.prepareCall("{CALL ADD_COMMENT(?,?,?,?)}");
+			cstmt.setInt(1, comment.getN_num());
+			cstmt.setString(2, comment.getId());
+			cstmt.setString(3, comment.getContent());
+			cstmt.registerOutParameter(4, Types.NUMERIC);
+			cstmt.execute();
+			num = cstmt.getInt(4);
+			comment.setNo(num);
+			comment.setRegdate(sdf.format(date));
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			DBUtil.dbReleaseClose(cstmt, conn);
+		}
+		return comment;
 	}
 }

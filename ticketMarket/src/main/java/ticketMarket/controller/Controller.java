@@ -110,10 +110,11 @@ public class Controller extends HttpServlet {
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
-
-		request.setAttribute("cont", view);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-		dispatcher.forward(request, response);
+		if(view != null) {
+			request.setAttribute("cont", view);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+			dispatcher.forward(request, response);
+		}
 	}
 
 }

@@ -1,32 +1,36 @@
-
-document.addEventListener('DOMContentLoaded',()=>{
-let finalPrice = document.getElementById('finalPrice').value;
-	let pointBtn = document.getElementById('pointButton');
-	pointBtn.addEventListener('click',()=>{
-		let changePrice = document.getElementById('changePrice');
-		let realPrice = document.getElementById('realPrice');
-		let usePoint = document.getElementById('usePoint');
-		let point = document.getElementById('pointInput').value;
-		if(parseInt(point) >= 5000 || parseInt(point) === 0){
+function onClickPoint() {
+	const finalPrice = document.getElementById('finalPrice').value;
+	let changePrice = document.getElementById('changePrice');
+	let realPrice = document.getElementById('realPrice');
+	let usePoint = document.getElementById('usePoint');
+	let point = document.getElementById('pointInput').value;
+	if (parseInt(point) >= 5000 || parseInt(point) === 0) {
+		if (parseInt(point) >= parseInt(finalPrice)) {
+			document.getElementById('pointInput').value = finalPrice;
+			usePoint.innerText = finalPrice;
+			realPrice.innerText = 0;
+			changePrice.value = 0;
+			point = finalPrice;
+		} else {
 			usePoint.innerText = point;
 			realPrice.innerText = parseInt(finalPrice) - parseInt(point);
-			changePrice.value= parseInt(finalPrice) - parseInt(point);
-		}else{
-			alert('5000점 이상부터 사용가능합니다.');
+			changePrice.value = parseInt(finalPrice) - parseInt(point);
 		}
-	});
-	
-	let paymnetsBtn = document.getElementById('paymentsButton');
-	paymnetsBtn.addEventListener('click',()=>{
-		let addr2 = document.getElementById('paymentAddress2');
-		if(addr2.style.display === 'inline-block' && (addr2.value === '' || addr2.value === null)){
-			alert('상세주소를 입력하세요');
-			addr2.focus();
-		}else{
-			document.getElementById('paymentCartForm').submit();			
-		}
-	});
-});
+	} else {
+		alert('5000점 이상부터 사용가능합니다.');
+	}
+}
+
+function payment() {
+	let addr2 = document.getElementById('paymentAddress2');
+	if (addr2.style.display === 'inline-block' && (addr2.value === '' || addr2.value === null)) {
+		alert('상세주소를 입력하세요');
+		event.preventDefault();
+		return false;
+	} else if (addr2.style.display === 'inline-block' && (addr2.value !== '' || addr2.value !== null)) {
+		return true;
+	}
+}
 
 
 
@@ -75,11 +79,10 @@ function sample7_execDaumPostcode() {
 			// }
 
 			//우편번호와 주소 정보를 해당 필드에 넣는다.
-			document.getElementById('paymentAddress1').value = addr +" ("+ data.zonecode+")";
+			document.getElementById('paymentAddress1').value = addr + " (" + data.zonecode + ")";
 			//커서를 상세주소 필드로 이동한다.
-			let addr2 = document.getElementById("paymentAddress2");
-			addr2.style.display='inline-block';
-			addr2.focus();
+			document.getElementById("paymentAddress2").style.display = 'inline-block';
+
 		}
 	}).open();
 }

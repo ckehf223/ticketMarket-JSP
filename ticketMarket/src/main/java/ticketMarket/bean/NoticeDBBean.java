@@ -62,6 +62,9 @@ public class NoticeDBBean {
 		NoticeDataBean notice = null;
 		try {
 			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement("update notice set hits=hits+1 where no = ?");
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
 			pstmt = conn.prepareStatement("select * from notice where no=?");
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();
@@ -71,7 +74,7 @@ public class NoticeDBBean {
 				notice.setTitle(rs.getString("title"));
 				notice.setContent(rs.getString("content"));
 				notice.setRegdate(sdf.format(rs.getTimestamp("regdate")));
-				notice.setHits(rs.getInt("hits"));
+				notice.setHits(rs.getInt("hits")+1);
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();

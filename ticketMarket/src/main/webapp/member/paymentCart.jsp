@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<script src="/ticketMarket/member/paymentCart.js"></script>
+
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <div id="paymentContent">
-    <form class="paymentWrap" id="paymentCartForm" action="/ticketMarket/paymentCartPro.do" method="post">
+    <form class="paymentWrap" id="paymentCartForm" action="/ticketMarket/paymentCartPro.do" onsubmit="return payment()" method="post">
       <div class="paymentTitleArea">
         <h3>주문 / 결제</h3>
       </div>
@@ -40,7 +40,7 @@
             <td class="delivery_col2">
             <input type="text"  id="paymentAddress1" name="addr1" readonly value="${member.ct_address}">
             <input type="text" placeholder="상세주소" id="paymentAddress2" name="addr2">
-            <button class="changeAddressButton" onclick="sample7_execDaumPostcode()" >배송지 변경</button>
+            <button type="button" class="changeAddressButton" onclick="sample7_execDaumPostcode()" >배송지 변경</button>
             </td>
           </tr>
           <tr>
@@ -96,7 +96,7 @@
               <tr>
                 <td class="payment_col1">적립예상포인트</td>
                 <td class="payment_col2">${point}점
-                <input type="hidden" name="savePoint" value="${point}"></td>
+                <input type="text" name="savePoint" value="${point}"></td>
               </tr>
               <c:choose>
               	<c:when test="${member.ct_mileage >= 5000 }">
@@ -105,7 +105,7 @@
                 <td class="payment_col2">
                   <div><span id="usePoint">0</span>점 &nbsp;&nbsp;&nbsp;&nbsp;보유: ${member.ct_mileage}점</div>
                   <input type="text" placeholder="5000원 이상부터 사용가능" id="pointInput" name="usePoint" value="0">
-                  <button class="pointButton" id="pointButton">적용</button></td>
+                  <button type="button" class="pointButton" id="pointButton" onclick="onClickPoint()">적용</button></td>
              		</tr>              	
               	</c:when>
               	<c:otherwise>
@@ -120,14 +120,14 @@
               <tr>
                 <td class="payment_col1">총결제금액</td>
                 <td class="payment_col2"><span id="realPrice">${realPrice}</span>원
-                <input type="hidden" value="${realPrice}" id="changePrice" name="finalPrice">
-                <input type="hidden" value="${realPrice}" id="finalPrice">
+                <input type="text" value="${realPrice}" id="changePrice" name="changePrice">
+                <input type="text" value="${realPrice}" id="finalPrice">
                 </td>
               </tr>
             </table>
           </div>
           <div class="paymentButtonArea">
-            <button class="paymentsButton" id="paymentsButton" >결제하기</button>
+            <input type="submit" class="paymentsButton" id="paymentsButton" value="결제하기">
           </div>
         </form>
         </div>

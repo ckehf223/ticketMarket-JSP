@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/ticketMarket/performance/contents.css">
   <link rel="stylesheet" href="/ticketMarket/performance/detailContent.css">
   <script src="/ticketMarket/performance/detailContent.js"></script>
+  <script src="/ticketMarket/member/paymentCart.js"></script>
   <script src="/ticketMarket/top/script.js"></script>
   <script src="/ticketMarket/member/myPage.js"></script>
   <script src="https://kit.fontawesome.com/6c2f448137.js" crossorigin="anonymous"></script>

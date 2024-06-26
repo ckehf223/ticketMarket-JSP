@@ -22,7 +22,7 @@ public class DetailNoticeAction implements CommandAction {
 		CommentDBBean dbProC = CommentDBBean.getInstance();
 		NoticeDataBean notice = dbPro.getNotice(num);
 		ArrayList<CommentDataBean> list = dbProC.getCommentList(num);
-		
+		request.setAttribute("num", num);
 		request.setAttribute("commentList", list);
 		request.setAttribute("notice", notice);
 		request.setAttribute("pageNum", pageNum);

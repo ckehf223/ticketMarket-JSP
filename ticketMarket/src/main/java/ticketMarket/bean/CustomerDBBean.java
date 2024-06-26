@@ -122,6 +122,7 @@ public class CustomerDBBean {
 				member.setCt_birth(rs.getString("ct_birth"));
 				member.setCt_email(rs.getString("ct_email"));
 				member.setCt_phone(rs.getString("ct_phone"));
+				member.setCt_totalamount(rs.getInt("ct_totalamount"));
 				member.setCt_address(rs.getString("ct_address").replaceAll("/", "  "));
 				member.setCt_grade(rs.getString("ct_grade"));
 				member.setCt_mileage(rs.getInt("ct_mileage"));

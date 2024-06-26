@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- <script src="/ticketMarket/member/completion.js"></script> -->
+<script src="/ticketMarket/member/completion.js"></script>
 <link rel="stylesheet" href="/ticketMarket/member/completion.css">
 <div class="completion">
     <div class="completionWrap">

@@ -22,8 +22,11 @@
           </div>
           <div class="commentBox">
             <h3>댓글</h3>
+            <!--  댓글 반복 시작 -->
+            <input type="hidden" id="notice_num" value="${num}">
+            <div id="comments">
             <c:forEach items="${commentList}" var="list">
-            <div class="comments_Area">
+            <div class="comments_Area" id="comment-${list.no}">
               <div class="titleArea">
                 <span class="comment_writerId">${list.id}</span>
               </div>
@@ -31,13 +34,13 @@
                 <span class="comment_content">${list.content}</span>
                 <br>
                 <span class="comment_writeDate">${list.regdate}</span>
-                <c:if test="${list.id eq loginId}">
-                <button class="commentAreaButton" id="commentAreaButton">삭제</button>
-                <input type="hidden" id="comment_num" value="${list.no}">
+                <c:if test="${loginId != null && list.id eq loginId}">
+                <button class="commentAreaButton" onclick="deleteComment(${list.no})">삭제</button>
                 </c:if>
               </div>
             </div>
             </c:forEach>
+         		</div>
             <!-- 댓글 반복문 끝-->
             <div class="commentWrite">
               <div class="commentWriteBox">
@@ -45,14 +48,14 @@
                 <span class="comment_writerId">${loginId}</span>
                 <input type="hidden" id="commentWriter" value="${loginId}">
                 <br>
-                </c:if>
                 <input type="text" id="commentWriteContent" placeholder="댓글을 남겨보세요">
-                <button class="commentInButton">등록</button>
+                <button class="commentInButton" id="commentAddButton">등록</button>
+                </c:if>
               </div>
             </div>
             <div class="backAwayArea">
               <button class="backAwayButton">목록</button>
-            </div>
+            	</div>
           </div>
         </div>
       </div>

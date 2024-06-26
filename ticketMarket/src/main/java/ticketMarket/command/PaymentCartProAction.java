@@ -33,7 +33,7 @@ public class PaymentCartProAction implements CommandAction {
 		}else {
 			usePoint = Integer.parseInt(request.getParameter("usePoint"));			
 		}
-		int finalPrice = Integer.parseInt(request.getParameter("finalPrice"));
+		int finalPrice = Integer.parseInt(request.getParameter("changePrice"));
 		String totalPrice = request.getParameter("totalPrice");
 		String salesPrice = request.getParameter("salesPrice");
 		
