@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<link rel="stylesheet" href="/ticketMarket/notice/detailNotice.css">
-<script src="/ticketMarket/notice/comment.js"></script>
  <div class="sectionNotice">
       <div class="noticeContentWrap">
         <h2 class="wrap_h2">공지사항</h2>
@@ -54,7 +52,7 @@
               </div>
             </div>
             <div class="backAwayArea">
-              <button class="backAwayButton">목록</button>
+              <button class="backAwayButton" id="backAwayButton" onclick="location.href='/ticketMarket/notice.do?pagNum${pageNum}'">목록</button>
             	</div>
           </div>
         </div>

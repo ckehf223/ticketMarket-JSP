@@ -8,6 +8,8 @@ import dbcon.DBUtil;
 import work.crypt.BCrypt;
 import work.crypt.SHA256;
 
+
+
 //관리자용 암호화를 만들어주는 클래스 (단, 한번만 실행해야한다)
 public class PassCrypt {
 	//싱글톤 방식
@@ -35,18 +37,17 @@ public class PassCrypt {
 
 		try {
 			conn = DBUtil.getConnection();
-
-			pstmt = conn.prepareStatement("select managerId, managerPasswd from manager");
+			pstmt = conn.prepareStatement("select * from admin");
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
-				String id = rs.getString("managerId");
-				String orgPass = rs.getString("managerPasswd");
+				String id = rs.getString("id");
+				String orgPass = rs.getString("pw");
 				// 2.패스워드를 암호화처리를 진행한다.
 				String shaPass = sha.getSha256(orgPass.getBytes());
 				String bcPass = BCrypt.hashpw(shaPass, BCrypt.gensalt());
 
-				pstmt = conn.prepareStatement("update manager set managerPasswd=? where managerId=?");
+				pstmt = conn.prepareStatement("update admin set pw=? where id=?");
 				pstmt.setString(1, bcPass);
 				pstmt.setString(2, id);
 				pstmt.executeUpdate();

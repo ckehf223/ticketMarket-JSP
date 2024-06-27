@@ -4,10 +4,9 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import dbcon.DBUtil;
-import work.crypt.BCrypt;
-import work.crypt.SHA256;
 
 public class CustomerDBBean {
 	private static CustomerDBBean instance = null;
@@ -32,7 +31,6 @@ public class CustomerDBBean {
 		int x = -1;
 		try {
 			conn = DBUtil.getConnection();
-			// 2. 암호를 가져와서 비교하는 방법
 			pstmt = conn.prepareStatement("select ct_pw from customer where ct_id = ?");
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
@@ -57,7 +55,6 @@ public class CustomerDBBean {
 		Connection conn = null;
 		CallableStatement cstmt = null;
 
-		// 1. SHA256 객체를 가져온다.
 		try {
 			conn = DBUtil.getConnection();
 			cstmt = conn.prepareCall("{ Call ct_signin_proc(?,?,?,?,?,?,?,?)}");
@@ -177,6 +174,23 @@ public class CustomerDBBean {
 		return x;
 	}
 	
+	//관리자가 회원 삭제
+	public void adminDeleteCustomer(int userNo) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement("delete from customer where ct_no = ?");
+			pstmt.setInt(1, userNo);
+			pstmt.executeUpdate();
+		
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			DBUtil.dbReleaseClose(pstmt, conn);
+		}
+	}
+	
 	//회원 나이 가져오기
 	public int getCustomerAge(String id) {
 		Connection conn = null;
@@ -219,5 +233,42 @@ public class CustomerDBBean {
 		} finally {
 			DBUtil.dbReleaseClose(cstmt, conn);
 		}
+	}
+	
+	//모든 회원 정보 가져오기
+	public ArrayList<CustomerDataBean> getUserList(){
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<CustomerDataBean> list = new ArrayList<CustomerDataBean>();
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement("select * from customer order by ct_no");		
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				CustomerDataBean member = new CustomerDataBean();
+				member.setCt_no(rs.getInt("ct_no"));
+				member.setCt_id(rs.getString("ct_id"));
+				member.setCt_pw(rs.getString("ct_pw"));
+				member.setCt_name(rs.getString("ct_name"));
+				member.setCt_age(rs.getInt("ct_age"));
+				member.setCt_email(rs.getString("ct_email"));
+				member.setCt_birth(rs.getString("ct_birth"));
+				member.setCt_email(rs.getString("ct_email"));
+				member.setCt_phone(rs.getString("ct_phone"));
+				member.setCt_totalamount(rs.getInt("ct_totalamount"));
+				member.setCt_address(rs.getString("ct_address").replaceAll("/", "  "));
+				member.setCt_grade(rs.getString("ct_grade"));
+				member.setCt_mileage(rs.getInt("ct_mileage"));
+				member.setCt_mileageSale(rs.getDouble("ct_mileageratio"));
+				member.setCt_saleRatio(rs.getDouble("ct_saleratio"));
+				list.add(member);
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			DBUtil.dbReleaseClose(rs,pstmt, conn);
+		}
+		return list;
 	}
 }

@@ -18,7 +18,7 @@ public class ModifyFormAction implements CommandAction {
 		CustomerDBBean dbPro = CustomerDBBean.getInstance();
 		CustomerDataBean member = dbPro.getCustomerInfo(id);
 		String fullBirth = member.getCt_birth();
-		String[] address = member.getCt_address().split("/");
+		String[] address = member.getCt_address().split("  ");
 		String[] email = member.getCt_email().split("@");
 		member.setCt_birth(fullBirth.substring(0,4)+"년"+fullBirth.substring(4,6)+"월"+fullBirth.substring(6,8)+"일");
 		request.setAttribute("address1", address[0]);

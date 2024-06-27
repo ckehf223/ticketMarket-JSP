@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="/ticketMarket/member/paymentCart.css">
   <link rel="stylesheet" href="/ticketMarket/performance/contents.css">
   <link rel="stylesheet" href="/ticketMarket/performance/detailContent.css">
+  <link rel="stylesheet" href="/ticketMarket/notice/detailNotice.css">
+	<script src="/ticketMarket/notice/comment.js"></script>
   <script src="/ticketMarket/performance/detailContent.js"></script>
   <script src="/ticketMarket/member/paymentCart.js"></script>
   <script src="/ticketMarket/top/script.js"></script>

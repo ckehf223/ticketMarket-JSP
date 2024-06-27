@@ -8,11 +8,11 @@ public class PerformanceDataBean {
 	private String pf_date; 			// 공연일
 	private String pf_venue; 			// 장소
 	private int pf_limitAge;			// 관람제한연령
-	private int pf_totalSeats;		// 총좌석수
+	private int pf_totalSeats;			// 총좌석수
 	private String pf_imageUrl;			// 이미지url
 	private String pf_pageUrl;			// 이동할 페이지 url
 	private int pf_price;				// 티켓가격,compare
-	
+	private int pf_allowcheck;			// 판매여부
 	public int getPf_no() {
 		return pf_no;
 	}
@@ -78,6 +78,12 @@ public class PerformanceDataBean {
 	}
 	public void setPf_price(int pf_price) {
 		this.pf_price = pf_price;
+	}
+	public int getPf_allowcheck() {
+		return pf_allowcheck;
+	}
+	public void setPf_allowcheck(int pf_allowcheck) {
+		this.pf_allowcheck = pf_allowcheck;
 	}
 	
 	
