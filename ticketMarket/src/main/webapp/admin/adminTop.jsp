@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="/ticketMarket/admin/admin.css">
   <script src="/ticketMarket/admin/adminLogin.js"></script>
   <script src="/ticketMarket/admin/admin.js"></script>
+  <script src="/ticketMarket/admin/adminProduct.js"></script>
+  <script src="/ticketMarket/admin/adminProductRegister.js"></script>
+  <script src="/ticketMarket/admin/adminNotice.js"></script>
+  <script src="/ticketMarket/admin/adminNoticeWrite.js"></script>
+  <script src="/ticketMarket/admin/adminNoticeModify.js"></script>
   <script src="https://kit.fontawesome.com/6c2f448137.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +53,7 @@
               </div>
               <div class="dropdown_menu" id="dropdown_pf">
                 <div><a href="/ticketMarket/mg/productList.do">공연조회</a></div>
-                <div><a href="">공연추가</a></div>
+                <div><a href="/ticketMarket/mg/productRegister.do">공연추가</a></div>
               </div>
             </li>
             <li>
@@ -58,8 +63,8 @@
                 <button class="openButton" id="openNoticeButton">+</button>
               </div>
               <div class="dropdown_menu" id="dropdown_notice">
-                <div><a href="">공지조회</a></div>
-                <div><a href="">공지추가</a></div>
+                <div><a href="/ticketMarket/mg/noticeList.do">공지조회</a></div>
+                <div><a href="/ticketMarket/mg/noticeWrite.do">공지추가</a></div>
               </div>
             </li>
           </ul>
@@ -74,7 +79,7 @@
           <span class="mainText">FancyTicket</span>
         </div>
         <div class="mainButtonArea">
-          <button class="fancyMoveButton" id="fancyMoveButton">고객사이트 이동</button>
+          <button class="fancyMoveButton" onclick="location.href='/ticketMarket/index.do'">고객사이트 이동</button>
           <c:if test="${loginId != null }">
           <button class="logoutButton" id="logoutButton">로그아웃</button>
           </c:if>

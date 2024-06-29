@@ -27,11 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	})
 
-	const fancyMoveBtn = document.getElementById('fancyMoveButton');
-	fancyMoveBtn.addEventListener('click', () => {
-		window.location.href = "/ticketMarket/index.do";
-	})
-
+	
 	const logoutBtn = document.getElementById('logoutButton');
 	logoutBtn.addEventListener('click', () => {
 		var xhr = new XMLHttpRequest();
@@ -52,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+
 function onDeleteUser(userNo) {
 	let yesNo = prompt('정말 삭제하시겠습니까? YES/NO');
 	if (yesNo.toUpperCase() === 'YES') {
@@ -60,6 +57,7 @@ function onDeleteUser(userNo) {
 		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+				alert('삭제가 완료되었습니다.');
 				window.location.href = '/ticketMarket/mg/userDelete.do';
 			} else if (xhr.readyState === 4) {
 				console.error('Error:', xhr.statusText);
@@ -69,5 +67,32 @@ function onDeleteUser(userNo) {
 			console.error('Request failed');
 		};
 		xhr.send("userNo=" + encodeURIComponent(userNo));
+	}
+	
+}
+
+
+function onUpdateProduct(pf_no){
+	window.location.href=`/ticketMarket/mg/modifyProduct.do?pf_no=${pf_no}`;
+}
+
+function onDeleteProduct(pf_no){
+	let yesNo = prompt('정말 삭제하시겠습니까? YES/NO');
+	if (yesNo.toUpperCase() === 'YES') {
+		var xhr = new XMLHttpRequest();
+		xhr.open('POST', '/ticketMarket/mg/productDeletePro.do', true);
+		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+				alert('공연 삭제가 완료되었습니다.');
+				window.location.href = '/ticketMarket/mg/productList.do';
+			} else if (xhr.readyState === 4) {
+				console.error('Error:', xhr.statusText);
+			}
+		}
+		xhr.onerror = function() {
+			console.error('Request failed');
+		};
+		xhr.send("pf_no=" + encodeURIComponent(pf_no));
 	}
 }

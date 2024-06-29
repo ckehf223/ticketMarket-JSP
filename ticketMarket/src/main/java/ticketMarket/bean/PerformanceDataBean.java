@@ -13,6 +13,7 @@ public class PerformanceDataBean {
 	private String pf_pageUrl;			// 이동할 페이지 url
 	private int pf_price;				// 티켓가격,compare
 	private int pf_allowcheck;			// 판매여부
+	private int pf_quantity;			// 판매수량
 	public int getPf_no() {
 		return pf_no;
 	}
@@ -84,6 +85,12 @@ public class PerformanceDataBean {
 	}
 	public void setPf_allowcheck(int pf_allowcheck) {
 		this.pf_allowcheck = pf_allowcheck;
+	}
+	public int getPf_quantity() {
+		return pf_quantity;
+	}
+	public void setPf_quantity(int pf_quantity) {
+		this.pf_quantity = pf_quantity;
 	}
 	
 	

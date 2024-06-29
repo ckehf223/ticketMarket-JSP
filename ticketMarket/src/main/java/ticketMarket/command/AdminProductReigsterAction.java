@@ -5,11 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import ticketMarket.process.CommandAction;
 
-public class MainAction implements CommandAction {
+public class AdminProductReigsterAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		return "/main/main.jsp";
+		request.setAttribute("type", Integer.valueOf(0));
+		return "/admin/adminProductRegister.jsp";
 	}
 
 }

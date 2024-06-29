@@ -78,3 +78,13 @@ tbody a{
 .noticeButtonArea{
   margin: 20px 0 29px;
 }
+.noticeButton{
+	width:25px;
+	background-color: rgb(61, 130, 247);
+	border: none;
+	border-radius:5px;
+	color: white;
+	padding: 5px;
+	margin: 0 10px;
+	cursor: pointer;
+}

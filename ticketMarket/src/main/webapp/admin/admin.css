@@ -72,6 +72,7 @@ ul{
   display: flex;
   flex-direction: column;
   width: 80%;
+  
 }
 .main_headerArea{
   display: flex;
@@ -82,6 +83,7 @@ ul{
   height: 70px;
   border-bottom: 3px solid rgba(75, 166, 192, 0.3);
   background-color: white;
+  z-index: 2;
 }
 .main_header{
   display: flex;
@@ -383,4 +385,388 @@ ul{
   border-radius: 5px;
   cursor: pointer;
 }
-/*공연조히 끝 css*/
+/*공연조회 끝 css*/
+
+/*공연수정  css*/
+.addPfArea{
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 20px;
+}
+.addTable {
+	border-collapse: collapse;
+}
+.td1{
+  text-align: center;
+  width: 150px;
+  height: 50px;
+  border-bottom: 1px solid rgb(0,0,0,0.3);
+  font-weight: bold;
+}
+.td2{
+  position: relative;
+  width: 250px;
+}
+.td2 > input {
+  width: inherit;
+  position: absolute;
+  bottom: 0px;
+  height: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(0,0,0,0.3);
+}
+#productPoster{
+  border: none;
+}
+.productButton{
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  padding: 3px;
+  background-color: rgb(61, 130, 247);
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  width: 160px;
+  font-size: 16px;
+}
+.resetProductButton{
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  padding: 3px;
+  background-color: rgb(240, 49, 129);
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  width: 160px;
+  font-size: 16px;
+}
+/*공연수정 끝 css*/
+/*공지사항 css*/
+.noticeMain{
+  width: 100%;
+}
+.noticeWrap{
+  margin: 0 auto;
+  width: 80%;
+}
+.noticeHeader{
+  text-align: center;
+}
+.noticeContentsArea{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+
+.noticeContentTop{
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #416486;
+  color: white;
+  width: 850px;
+  height: 48px;
+}
+
+.noticeContentTop > h3{
+  margin: 0;
+  font-size: 20px;
+}
+.noticeSpan{
+  font-size: 12px;
+  color: rgb(238,238,238,0.7);
+}
+.noticeSortBox{
+  position: relative;
+}
+.sortButton{
+background-color: inherit;
+outline: none;
+border: inherit;
+color: white;
+font-weight: 600;
+cursor: pointer;
+}
+#sortCount::before{
+content: '';
+position: absolute;
+}
+.sortButton:hover{
+text-decoration: underline ;
+}
+.noticeTable{
+width: 850px;
+text-align: center;
+border-collapse: collapse;
+}
+.noticeTable thead{
+background-color: rgba(128, 128, 128, 0.267);
+border-bottom: 1px solid rgb(0,0,0,0.3);
+font-size: 15px;
+height: 33px;
+}
+.noticeTable td{
+border-bottom: 1px solid rgb(0,0,0,0.3);
+font-size: 14px;
+height: 37px;
+}
+.noticeTbody a{
+color: inherit;
+text-decoration: none;
+}
+.noticeTitle > a:hover{
+text-decoration: underline;
+}
+.noticeButtonArea{
+margin: 20px 0 29px;
+}
+.noticeButton{
+	width:25px;
+	background-color: rgb(61, 130, 247);
+	border: none;
+	border-radius:5px;
+	color: white;
+	padding: 5px;
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+/*공지사항 끝 css*/
+.sectionNotice{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+}
+.noticeContentWrap{
+  position: relative;
+  width: 80%;
+  padding: 30px;
+  text-align: start;
+  border: 1px solid rgb(0, 0, 0, 0.3);
+  
+}
+.wrap_h2{
+  margin: 0;
+  padding-left: 10px;
+}
+.articleHeader{
+  padding-left: 10px;
+}
+.articleHeader> h3{
+  border-top: 1px solid rgb(0, 0, 0, 0.3);
+  margin: 5px 0;
+  padding: 10px 0;
+  font-size: 22px;
+  font-weight: 500;
+}
+.writeId{
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+}
+.writeDate, .writeHits{
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.8);
+}
+.writerInfo{
+  margin-bottom: 10px;
+}
+.articleContentArea{
+  display: flex;
+  position: relative;
+  border-top: 1px solid rgb(0, 0, 0, 0.3);
+  padding: 10px 5px;
+}
+.articleContent{
+  width: 500px;
+  height: 300px;
+  width: 650px;
+  margin: 10px 0;
+  text-wrap: wrap;
+}
+.commentBox > h3{
+  margin: 0;
+  font-size: 22px;
+  font-weight: 500;
+}
+.comments_Area{
+  position: relative;
+  width: 750px;
+  margin: 10px;
+  padding: 6px;
+  padding-left: 20px;
+  border: 1px solid rgb(0, 0, 0, 0.6);;
+  border-radius: 4px;
+  background-color: beige;
+}
+.titleArea{
+  margin: 5px 0;
+ 
+}
+.comment_writerId{
+  font-size: 14px;
+  font-weight: 700;
+}
+.comment_content{
+  font-size: 14px;
+  font-weight: 500;
+}
+.comment_writeDate{
+  font-size: 11px;
+}
+.commentAreaButton{
+  position: absolute;
+  right: 10px;
+  bottom: 25px;
+  background-color: inherit;
+  color: rgba(0, 0, 0, 0.4);
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.commentWrite{
+  position: relative;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 15px;
+  margin: 40px 0;
+  margin-left: 10px;
+}
+#commentWriteContent{
+  display: inline-block;
+  margin-top: 10px;
+  border: none;
+  width: 95%;
+  outline: none;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  height: 17px;
+}
+.commentInButton{
+  position: absolute;
+  right: 10px;
+  bottom: 18px;
+  border: none;
+  background-color: rgb(215, 215, 215,0.5);
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.backAwayArea{
+  text-align: center;
+  
+}
+.backAwayButton{
+  text-align: center;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: rgb(61, 130, 247);
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  width: 160px;
+  font-size: 16px;
+}
+.modifyButton{
+  text-align: center;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: rgb(33, 185, 45);
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  width: 160px;
+  font-size: 16px;
+}
+.deleteButton{
+  text-align: center;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: rgb(222, 41, 28);
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  width: 160px;
+  font-size: 16px;
+}
+.noticeHeader{
+  padding-left: 10px;
+  border-top: 1px solid rgb(0, 0, 0, 0.3);
+}
+.adminNoticeTitle{
+  width: 650px;
+  height: 20px;
+  padding: 10px;
+  background-color: beige;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgb(0, 0, 0, 0.3);
+  font-size: 18px;
+}
+.noticeContentArea{
+  display: flex;
+  position: relative;
+  padding: 10px 5px;
+  justify-content: center;
+}
+.noticeContent{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 300px;
+  width: 650px;
+  margin: 10px 0;
+  text-wrap: wrap;
+}
+#noticeContentText{
+  width: 100%;
+  height: 500px;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgb(0, 0, 0, 0.3);
+  font-size: 18px;
+  background-color: beige;
+}
+.noticeButtonBox{
+  text-align: center;
+}
+.registerButton{
+  text-align: center;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: rgb(61, 130, 247);
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  width: 160px;
+  font-size: 16px;
+}
+.cencelButton{
+  text-align: center;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: rgb(222, 41, 28);
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  width: 160px;
+  font-size: 16px;
+}

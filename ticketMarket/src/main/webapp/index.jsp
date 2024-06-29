@@ -12,6 +12,7 @@
 	<jsp:include page="/admin/adminBottom.jsp" />
 </c:if>
 
+
 <c:if test="${type == null || type == 1 }">
 	<c:choose>
 		<c:when
