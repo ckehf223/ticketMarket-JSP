@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/ticketMarket/performance/contents.css">
   <link rel="stylesheet" href="/ticketMarket/performance/detailContent.css">
   <link rel="stylesheet" href="/ticketMarket/notice/detailNotice.css">
+  <link rel="stylesheet" href="/ticketMarket/search/search.css">
 	<script src="/ticketMarket/notice/comment.js"></script>
   <script src="/ticketMarket/performance/detailContent.js"></script>
   <script src="/ticketMarket/member/paymentCart.js"></script>
@@ -61,7 +62,7 @@
         <ul class="categoryMenu">
           <li><a class="header_link" href="#">랭킹</a></li>
           <li><a class="header_link" href="/ticketMarket/notice.do">공지사항</a></li>
-          <li><a class="header_link" href="#">공연장</a></li>
+          <li><a class="header_link" href="/ticketMarket/searchPro.do">공연장</a></li>
         </ul>
           <div class="adImg"><img src="/ticketMarket/image/navimg.png" alt="광고이미지"></div>
       </div>
