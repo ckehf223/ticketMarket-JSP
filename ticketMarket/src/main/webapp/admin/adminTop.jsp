@@ -26,7 +26,7 @@
         <div class="sidebar_header">
           <h1><em>FancyManager</em></h1>
         </div>
-        <c:if test="${loginId != null }">
+        <c:if test="${adminLoginId != null }">
         <div class="sideMenu">
           <ul class="menu_ul">
             <li>
@@ -79,8 +79,8 @@
           <span class="mainText">FancyTicket</span>
         </div>
         <div class="mainButtonArea">
-          <button class="fancyMoveButton" onclick="location.href='/ticketMarket/index.do'">고객사이트 이동</button>
-          <c:if test="${loginId != null }">
+          <button class="fancyMoveButton" id="fancyMoveButton" >고객사이트 이동</button>
+          <c:if test="${adminLoginId != null }">
           <button class="logoutButton" id="logoutButton">로그아웃</button>
           </c:if>
         </div>

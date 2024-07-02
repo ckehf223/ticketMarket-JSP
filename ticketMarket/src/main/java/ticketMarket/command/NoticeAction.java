@@ -26,7 +26,7 @@ public class NoticeAction implements CommandAction {
 		int startRow = (pageNum - 1) * pageSize + 1;
 		int endRow = pageNum * pageSize;
 		ArrayList<NoticeDataBean> noList = dbPro.getNoticeList(startRow, endRow);
-		int count = noList.size();
+		int count = dbPro.getNoticeCount();
 		int number = count-(pageNum -1 )*pageSize;
 		int pageCount = count/pageSize + (count % pageSize == 0 ? 0 : 1);
 		int startPage = (int)((pageNum-1) / pageBlock) * pageBlock +1;

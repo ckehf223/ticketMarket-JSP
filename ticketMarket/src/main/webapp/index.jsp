@@ -3,10 +3,10 @@
 
 <c:if test="${type == 0 }">
 	<jsp:include page="/admin/adminTop.jsp" />
-	<c:if test="${loginId == null}">
+	<c:if test="${adminLoginId == null}">
 				<jsp:include page="/admin/adminLogin.jsp" />
 	</c:if>
-	<c:if test="${loginId != null}">
+	<c:if test="${adminLoginId != null}">
 				<jsp:include page="${cont}" />
 	</c:if>
 	<jsp:include page="/admin/adminBottom.jsp" />

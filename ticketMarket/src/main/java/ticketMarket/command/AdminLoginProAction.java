@@ -16,10 +16,9 @@ public class AdminLoginProAction implements CommandAction {
 		AdminDBBean manager = AdminDBBean.getInstance();
 		int check = manager.adminCheck(id, pw);
 		if(check == 1) {
-			request.getSession().setAttribute("loginId", id);
+			request.getSession().setAttribute("adminLoginId", id);
 		}
 		request.setAttribute("type", Integer.valueOf(0));
-		request.setAttribute("id", id);
 		request.setAttribute("check", Integer.valueOf(check));
 		return "/admin/adminLoginPro.jsp";
 	}

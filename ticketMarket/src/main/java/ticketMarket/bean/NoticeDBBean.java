@@ -56,6 +56,29 @@ public class NoticeDBBean {
 		return noList;
 	}
 
+	//전체 게시글 count 가져오기
+	public int getNoticeCount() {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int count= 0;
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement("select count(*) as cnt from notice");
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				count = rs.getInt("cnt");
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			DBUtil.dbReleaseClose(rs, pstmt, conn);
+		}
+		return count;
+	}
+	
+	
 	// 게시글 지정 가져오기
 	public NoticeDataBean getNotice(int num) {
 		SimpleDateFormat sdf = new SimpleDateFormat("YY.MM.dd hh:mm");
@@ -85,6 +108,7 @@ public class NoticeDBBean {
 		}
 		return notice;
 	}
+	
 
 	// 게시글 추가하기
 	public void registerNotice(String title, String content) {

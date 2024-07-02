@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+	const fancyMoveBtn = document.getElementById('fancyMoveButton');
+	fancyMoveBtn.addEventListener('click',()=>{
+		window.location.href='/ticketMarket/mg/fancyMarket.do';
+	})
+
+	
 	const openUserBtn = document.getElementById('openUserButton');
 	const dropdown_user = document.getElementById('dropdown_user');
 	openUserBtn.addEventListener('click', () => {
@@ -26,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			dropdown_notice.style.display = 'none';
 		}
 	})
-
+	
+	
 	
 	const logoutBtn = document.getElementById('logoutButton');
 	logoutBtn.addEventListener('click', () => {
@@ -45,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		};
 		xhr.send();
 	})
+	
 
 });
 

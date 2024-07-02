@@ -96,7 +96,7 @@
               <tr>
                 <td class="payment_col1">적립예상포인트</td>
                 <td class="payment_col2">${point}점
-                <input type="text" name="savePoint" value="${point}"></td>
+                <input type="hidden" name="savePoint" value="${point}"></td>
               </tr>
               <c:choose>
               	<c:when test="${member.ct_mileage >= 5000 }">
@@ -120,8 +120,8 @@
               <tr>
                 <td class="payment_col1">총결제금액</td>
                 <td class="payment_col2"><span id="realPrice">${realPrice}</span>원
-                <input type="text" value="${realPrice}" id="changePrice" name="changePrice">
-                <input type="text" value="${realPrice}" id="finalPrice">
+                <input type="hidden" value="${realPrice}" id="changePrice" name="changePrice">
+                <input type="hidden" value="${realPrice}" id="finalPrice">
                 </td>
               </tr>
             </table>
