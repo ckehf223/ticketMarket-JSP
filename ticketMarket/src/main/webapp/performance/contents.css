@@ -156,3 +156,164 @@
   line-height: 150%;
   color: #000;
 }
+.searchMain{
+  width: 100%;
+  margin: 80px auto;
+}
+.searchWrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+.searchNone{
+  height: 100px;
+  font-size: 25px;
+}
+
+/* 랭킹 영역*/
+.rankWrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  margin: 40px 0;
+}
+.rankHeader{
+  text-align: center;
+}
+.rankMiddle{
+  display: flex;
+  margin-top: 2rem;
+  width: 72%;
+  max-width: 128rem;
+  color: rgb(0, 0, 0, 0.5);
+}
+.rankMain{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.rankMain_top{
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+}
+.rankMain_top3{
+  display: flex;
+  gap: 28px;
+}
+.rank_topitem{
+  display: flex;
+  gap: 10px;
+}
+.rank_topIcon{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 50px;
+  margin-top: 5px;
+}
+.rank_topText{
+  padding-top: 10px;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  z-index: 2;
+}
+.rank_topImg{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #8e43e7;
+  border-radius: 10px;
+}
+.rank_topContent{
+  display: flex;
+  flex-direction: column;
+  width: 275px;
+  gap: 20px;
+}
+.rank_topContent_top{
+  width: 100%;
+  height: 360px;
+}
+.rank_topContent_top > img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.rank_topContent_section{
+  padding: 0;
+  margin: 0;
+  padding-left: 8px;
+  list-style-type: none;
+}
+.topContent_section_title{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.topContent_section_venue{
+  margin-bottom: 5px;
+}
+.topContent_section_day{
+  font-size: 12px;
+  color: rgb(0, 0, 0, 0.6);
+}
+.rankSection_wrap{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 10px;
+}
+.rankSection{
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.17);
+  padding-bottom: 10px;
+
+}
+.rankSection_num{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  width: 10%;
+}
+.rankSection_item{
+  display: flex;
+  width: 90%;
+  gap: 30px;
+}
+.rankSection_img{
+  display: flex;
+  width: 90px;
+  height: 120px;
+  padding: 5px;
+}
+.rankSection_img > img{
+  border-radius: 5px;
+}
+.rankSection_itemContent{
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  gap:10px;
+}
+.rankSection_itemTitle{
+  text-align: center;
+  width: 300px
+}
+.rankSection_itemVenue{
+  text-align: center;
+  width: 300px;
+}
+.rankSection_itemDate{
+  text-align: center;
+  width: 300px;
+}

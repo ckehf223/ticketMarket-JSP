@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import dbcon.DBUtil;
 import oracle.jdbc.OracleTypes;
@@ -56,6 +57,43 @@ public class PerformanceDBBean {
 			ex.printStackTrace();
 		} finally {
 			DBUtil.dbReleaseClose(rs, pstmt, conn);
+		}
+		return list;
+	}
+	
+	//검색한 공연 정보가져오기
+	public ArrayList<PerformanceDataBean> getSearchPerformanceList(String text) {
+		Connection conn = null;
+		CallableStatement cstmt = null;
+		ResultSet rs = null;
+		ArrayList<PerformanceDataBean> list = null;
+		try {
+			list = new ArrayList<>();
+			conn = DBUtil.getConnection();
+			cstmt = conn.prepareCall("{Call search_pfList(?,?)}");
+			cstmt.setString(1, text);
+			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
+			cstmt.executeQuery();
+			rs = (ResultSet) cstmt.getObject(2);
+			while (rs.next()) {
+				PerformanceDataBean pd = new PerformanceDataBean();
+				pd.setPf_no(rs.getInt("pf_no"));
+				pd.setPf_id(rs.getString("pf_id"));
+				pd.setPf_name(rs.getString("pf_name"));
+				pd.setPf_genre(rs.getString("pf_genre"));
+				pd.setPf_date(rs.getString("pf_date"));
+				pd.setPf_venue(rs.getString("pf_venue"));
+				pd.setPf_limitAge(rs.getInt("pf_limitage"));
+				pd.setPf_totalSeats(rs.getInt("pf_totalseats"));
+				pd.setPf_imageUrl(rs.getString("pf_imageurl"));
+				pd.setPf_pageUrl(rs.getString("pf_pageurl"));
+				pd.setPf_price(rs.getInt("pf_price"));
+				list.add(pd);
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			DBUtil.dbReleaseClose(rs, cstmt, conn);
 		}
 		return list;
 	}
@@ -230,4 +268,33 @@ public class PerformanceDBBean {
 			DBUtil.dbReleaseClose(cstmt, conn);
 		}
 	}
+	
+	//예매내역 가져오기
+		public ArrayList<HashMap<String,String>> getRankTopList(){
+			Connection conn = null;
+			CallableStatement cstmt = null;
+			ResultSet rs = null;
+			ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String,String>>();
+			try {
+				conn = DBUtil.getConnection();
+				cstmt = conn.prepareCall("{ Call getRank_topTenProc(?)}");
+				cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+				cstmt.executeQuery();
+				rs = (ResultSet)cstmt.getObject(1);
+				while(rs.next()) {
+					HashMap<String,String> map = new HashMap<>();
+					map.put("pf_no", rs.getString("pf_no"));
+					map.put("pf_name", rs.getString("pf_name"));
+					map.put("pf_venue", rs.getString("pf_venue"));
+					map.put("pf_date", rs.getString("pf_date"));
+					map.put("pf_imageurl", rs.getString("pf_imageurl"));
+					list.add(map);
+				}
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			} finally {
+				DBUtil.dbReleaseClose(rs, cstmt, conn);
+			}
+			return list;
+		}
 }

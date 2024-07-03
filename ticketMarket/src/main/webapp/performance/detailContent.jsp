@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
   <div class="detailContentWrap">
+  <input type="hidden" value="${loginId}" id="loginIdInput">
     <div class="detailContent">
     <div class="content_header">
       <h1 class="content_title">${pd.pf_genre} &lt;${pd.pf_name}&gt;</h1>

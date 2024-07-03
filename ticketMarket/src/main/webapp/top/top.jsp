@@ -28,8 +28,7 @@
           <div class="header_logoArea">
             <div class="header_img"><a href="/ticketMarket/index.do"><img src="/ticketMarket/image/mainLogo.png" alt="메인 로고">FANCY TICKET</a></div>
           </div>
-          <form class="search_form" action="#" method="get">
-            <label for="search"></label>
+          <form class="search_form" action="/ticketMarket/search.do" method="get">
             <input id="search" name="search" type="text" placeholder="검색">
             <button class="search_button" id="search_button"></button>
           </form>
@@ -57,10 +56,11 @@
           <li><a class="header_link" href="/ticketMarket/contents.do?num=3">전시</a></li>
           <li><a class="header_link" href="/ticketMarket/contents.do?num=4">연극</a></li>
           <li><a class="header_link" href="/ticketMarket/contents.do?num=5">아동가족</a></li>
+          
         </ul>
         <div class="header_menuDivider"></div>
         <ul class="categoryMenu">
-          <li><a class="header_link" href="#">랭킹</a></li>
+          <li><a class="header_link" href="/ticketMarket/rank.do">랭킹</a></li>
           <li><a class="header_link" href="/ticketMarket/notice.do">공지사항</a></li>
           <li><a class="header_link" href="/ticketMarket/searchPro.do">공연장</a></li>
         </ul>

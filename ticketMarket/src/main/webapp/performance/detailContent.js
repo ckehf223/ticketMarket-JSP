@@ -2,9 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	let seats = document.getElementsByClassName('seatCheckBox_lable');
 	let limitAge = document.getElementById('limitAge').value;
 	let userAge = document.getElementById('userAge').value;
+	const loginId = document.getElementById('loginIdInput').value;
 	Array.from(seats).forEach(seat => {
 		seat.addEventListener('click', () => {
-			if (parseInt(limitAge) > parseInt(userAge)) {
+			if(loginId === null || loginId === ''){
+				alert('로그인 후 이용가능합니다.')
+			}else if (parseInt(limitAge) > parseInt(userAge)) {
 				alert('관람연령' + limitAge + '세 이상부터 예매 가능합니다.\n 관람연령을 확인해 주세요!');
 			} else {
 				if (seat.style.backgroundColor === 'skyblue') {
