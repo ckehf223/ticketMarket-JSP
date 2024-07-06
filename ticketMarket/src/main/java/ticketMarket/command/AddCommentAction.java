@@ -31,6 +31,7 @@ public class AddCommentAction implements CommandAction {
 	    jsonResponse.append("}");
 	  
 	    response.setStatus(HttpServletResponse.SC_OK);
+	    
 	    response.setContentType("application/json");
 	    response.getWriter().write(jsonResponse.toString());
 		return null;

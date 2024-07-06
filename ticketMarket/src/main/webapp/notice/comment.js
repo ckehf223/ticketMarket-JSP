@@ -5,20 +5,27 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (commentText === null || commentText === '') {
 			alert('댓글내용을 입력해주세요');
 		} else {
+			
 			let query = {
 				content: commentText,
 				writer: document.getElementById('commentWriter').value,
 				num: document.getElementById('notice_num').value
 			};
+			
 			var xhr = new XMLHttpRequest();
 			xhr.open('POST', '/ticketMarket/commentAddPro.do', true);
 			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			
 			xhr.onreadystatechange = () => {
 				if (xhr.readyState === 4 && xhr.status === 200) {
 					var comment = JSON.parse(xhr.responseText);
+					
 					const commentsContainer = document.getElementById('comments');
+					
 					const commentElement = createCommentElement(comment);
+					
 					commentsContainer.appendChild(commentElement);
+					
 					document.getElementById('commentWriteContent').value = '';
 				} else if (xhr.readyState === 4) {
 					console.error('Error adding comment:', xhr.statusText);

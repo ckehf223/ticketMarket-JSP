@@ -3,11 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	checkIdBtn.addEventListener('click', () => {
 		let checkId = document.getElementById('userId').value;
 		let message = document.getElementById('userIdMessage');
+		
 		if (checkId) {
 			let query = { id: checkId };
-			var xhr = new XMLHttpRequest();
+			
+			let xhr = new XMLHttpRequest();
+			
 			xhr.open("POST", "/ticketMarket/confirmId.do", true);
 			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
 					var data = xhr.responseText;
@@ -31,10 +35,18 @@ document.addEventListener('DOMContentLoaded', () => {
 			checkId.focus();
 		}
 	});
+	
+	
+	
+	
+	
+	
+	
 	let cancelBtn = document.getElementById('reset-button');
 	cancelBtn.addEventListener('click', () => {
 		window.location.href = '/ticketMarket/index.do';
 	});
+	
 
 	//생년월일 select 
 

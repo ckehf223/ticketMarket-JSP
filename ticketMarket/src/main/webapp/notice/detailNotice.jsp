@@ -40,6 +40,8 @@
             </c:forEach>
          		</div>
             <!-- 댓글 반복문 끝-->
+            
+            
             <div class="commentWrite">
               <div class="commentWriteBox">
               <c:if test="${loginId != null }">
